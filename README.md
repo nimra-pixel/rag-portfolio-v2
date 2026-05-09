@@ -2,9 +2,9 @@
 
 > **Why v2?** My [first RAG app](https://github.com/nimra-pixel/rag-portfolio) used the OpenAI API. After deploying it publicly I realised anyone visiting the live demo would hit a rate-limit error without API credits — not great for a portfolio. So I rebuilt it using the **HuggingFace free inference API**: same hybrid retrieval architecture, same citation enforcement, zero cost to run for any visitor.
 
-🚀 **[Live Demo →]([https://your-v2-app.streamlit.app](https://rag-portfolio-v2-zcvkfrodvzcqoqxa8gayv3.streamlit.app))**  
-🔗 **[v1 (OpenAI version) →]([https://github.com/nimra-pixel/rag-portfolio](https://rag-portfolio-v6vywnuutquov86vmrehtr.streamlit.app/))**
+🚀 **[Live Demo →](https://rag-portfolio-v2-zcvkfrodvzcqoqxa8gayv3.streamlit.app)**  
 
+🔗 **[v1 (OpenAI version) →](https://rag-portfolio-v6vywnuutquov86vmrehtr.streamlit.app/)**
 ---
 
 ## What changed from v1
