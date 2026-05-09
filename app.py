@@ -83,7 +83,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── HuggingFace API ───────────────────────────────────────────────────────────
-HF_EMBED = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
+HF_EMBED = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
 HF_LLM   = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
 
 def hf_headers():
@@ -97,7 +97,11 @@ def embed(texts: tuple) -> np.ndarray:
     if r.status_code != 200:
         st.error(f"Embedding API error {r.status_code}: {r.text[:300]}")
         st.stop()
-    return np.array(r.json())
+    arr = np.array(r.json())
+    # /models/ endpoint returns [batch, tokens, dim] — mean-pool to [batch, dim]
+    if arr.ndim == 3:
+        arr = arr.mean(axis=1)
+    return arr
 
 def bm25(query, docs, k1=1.5, b=0.75):
     qt  = query.lower().split()
