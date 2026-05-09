@@ -50,4 +50,4 @@ streamlit run app.py
 
 ---
 
-Built by [Nimra](https://linkedin.com/in/yourprofile) · Part of a 5-project AI Engineer portfolio
+Built by [Nimra](https://linkedin.com/in/yourprofile)  
